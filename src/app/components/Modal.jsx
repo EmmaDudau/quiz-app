@@ -22,9 +22,9 @@ export default function Modal({ open, handleClose }) {
                         </div>
 
                         <div>
-                            <button className="py-2 px-4 bg-blue-600 text-white rounded-up">Highschool</button>
-                            <button className="py-2 px-4 bg-blue-600 text-white rounded-up">College</button>
-                            <button className="py-2 px-4 bg-blue-600 text-white rounded-up">Graduate</button>
+                            <button className="py-2 px-4 bg-blue-600 text-white rounded-up">Tehnic</button>
+                            <button className="py-2 px-4 bg-blue-600 text-white rounded-up">Uman</button>
+                            <button className="py-2 px-4 bg-blue-600 text-white rounded-up">Real</button>
                         </div>
                     </div>
                 </div>
