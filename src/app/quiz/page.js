@@ -1,3 +1,5 @@
+"use client"
+//redeploy
 
 import React, { useEffect, useState } from 'react';
 import { useRouter } from 'next/router'
