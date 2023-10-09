@@ -4,17 +4,20 @@ import { useState } from 'react';
 import Modal from "@/app/components/Modal";
 import Navbar from "@/app/components/Navbar";
 import QuizzieDiv from "@/app/components/QuizzieDiv";
+import {router} from "next/client";
+
 
 export default function DashboardPage() {
     const [search, setSearch] = useState('');
     const [modalOpen, setModalOpen] = useState(false);
 
     const topics = [
-        'Mathematics',
-        'Science',
-        'History',
-        'Literature',
-        'Geography'
+        'Matematica',
+        'Fizica',
+        'Chimie',
+        'Istorie',
+        'Romana',
+        'Geografie'
         // add more topics as necessary
     ];
 
@@ -29,8 +32,14 @@ export default function DashboardPage() {
     };
 
     const handleQuizStart = (topic) => {
-        openModal();
+        if (router) {
+            router.push({
+                pathname: '/quiz',
+                query: { subject: topic },
+            });
+        }
     };
+
 
     return (
         <div>
@@ -52,27 +61,27 @@ export default function DashboardPage() {
                 Search
             </button>
             <h1 className="text-3xl font-bold mt-12">Choose a topic:</h1>
-            <div className="grid grid-cols-3 gap-4 w-3/4 mt-6">
-                {topics.map((topic, index) => (
-                    <div className="rounded overflow-hidden shadow-lg" key={index}>
-                        <img className="w-20" src={`/${topic}.png`} alt={topic}/>
-                        <div className="px-6 py-4">
-                            <div className="font-bold text-xl mb-2">{topic}</div>
-                            <p className="text-gray-700 text-base">
-                                {/* Add topic description */}
-                            </p>
+                <div className="grid grid-cols-3 gap-4 w-3/4 mt-6">
+                    {topics.map((topic, index) => (
+                        <div className="flex flex-col justify-center items-center rounded overflow-hidden shadow-lg" key={index}>
+                            <img className="w-20" src={`/${topic}.png`} alt={topic}/>
+                            <div className="px-6 py-4">
+                                <div className="font-bold text-xl mb-2">{topic}</div>
+                                <p className="text-gray-700 text-base">
+                                    {/* Add topic description */}
+                                </p>
+                            </div>
+                            <div className="px-6 py-4">
+                                <button
+                                    className="bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded-full"
+                                    onClick={() => handleQuizStart(topic)}
+                                >
+                                    Start Quiz
+                                </button>
+                            </div>
                         </div>
-                        <div className="px-6 py-4">
-                            <button
-                                className="bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded-full"
-                                onClick={() => handleQuizStart(topic)}
-                            >
-                                Start Quiz
-                            </button>
-                        </div>
-                    </div>
-                ))}
-            </div>
+                    ))}
+                </div>
         </div>
     </div>
     );
