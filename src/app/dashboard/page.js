@@ -31,14 +31,14 @@ export default function DashboardPage() {
         setModalOpen(true);
     };
 
-    const handleQuizStart = (topic) => {
-        if (router) {
-            router.push({
-                pathname: '/quiz',
-                query: { subject: topic },
-            });
-        }
-    };
+    // const handleQuizStart = (topic) => {
+    //     if (router) {
+    //         router.push({
+    //             pathname: '/quiz',
+    //             query: { subject: topic },
+    //         });
+    //     }
+    // };
 
 
     return (
@@ -74,7 +74,7 @@ export default function DashboardPage() {
                             <div className="px-6 py-4">
                                 <button
                                     className="bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded-full"
-                                    onClick={() => handleQuizStart(topic)}
+                                    // onClick={() => handleQuizStart(topic)}
                                 >
                                     Start Quiz
                                 </button>
