@@ -43,3 +43,18 @@ body {
 .animate-float {
   animation: float 4s ease-in-out infinite;
 }
+
+@keyframes slideIn {
+  from {
+    transform: translateY(-3rem);
+    opacity: 0;
+  }
+  to {
+    transform: translateY(0);
+    opacity: 1;
+  }
+}
+
+.animate-slideIn {
+  animation: slideIn 2s forwards;
+}

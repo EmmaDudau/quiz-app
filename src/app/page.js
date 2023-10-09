@@ -1,3 +1,4 @@
+import Link from "next/link";
 
 export default function Home() {
   return (
@@ -11,9 +12,10 @@ export default function Home() {
               <div className="text-2xl font-extrabold text-gray-900">Welcome to your Quiz App!</div>
               <p className="mt-2 text-gray-600">Get started by clicking the button below.</p>
               <div className="mt-12">
-                <button className="py-3 px-4 rounded-md bg-gradient-to-r from-blue-500 to-cyan-500 hover:shadow-xl transform transition duration-200 hover:scale-110 text-white font-semibold w-full sm:w-auto">
-                  Start Quiz
-                </button>
+                  <Link href="/dashboard">
+                  <button className="py-3 px-4 rounded-md bg-gradient-to-r from-blue-500 to-cyan-500 hover:shadow-xl transform transition duration-200 hover:scale-110 text-white font-semibold w-full sm:w-auto"
+                >Get started</button>
+                  </Link>
               </div>
             </div>
             <p className="mt-6 text-gray-500 text-sm text-center">
