@@ -14,7 +14,7 @@ export default function Home() {
               <div className="mt-12">
                   <Link href="/dashboard">
                   <button className="justify-center py-3 px-4 rounded-md bg-gradient-to-r from-blue-500 to-cyan-500 hover:shadow-xl transform transition duration-200 hover:scale-110 text-white font-semibold w-full sm:w-auto"
-                >Incepe pregatirea</button>
+                >Începe pregatirea</button>
                   </Link>
               </div>
             </div>
