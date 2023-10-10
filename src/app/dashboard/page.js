@@ -4,7 +4,6 @@ import { useState } from 'react';
 import Modal from "@/app/components/Modal";
 import Navbar from "@/app/components/Navbar";
 import QuizzieDiv from "@/app/components/QuizzieDiv";
-import {router} from "next/client";
 
 
 export default function DashboardPage() {
@@ -12,12 +11,20 @@ export default function DashboardPage() {
     const [modalOpen, setModalOpen] = useState(false);
 
     const topics = [
-        'Matematica',
-        'Fizica',
+        'Matematică',
+        'Fizică',
         'Chimie',
         'Istorie',
-        'Romana',
-        'Geografie'
+        'Română',
+        'Geografie',
+        'Logică',
+        'Biologie',
+        'Economie',
+        'Filosofie',
+        'Sociologie',
+        'Psihologie',
+        'Informatică'
+
         // add more topics as necessary
     ];
 
@@ -26,29 +33,13 @@ export default function DashboardPage() {
         // Implement search functionality here
     };
 
-    // Function to open the modal
-    const openModal = () => {
-        setModalOpen(true);
-    };
 
-    // const handleQuizStart = (topic) => {
-    //     if (router) {
-    //         router.push({
-    //             pathname: '/quiz',
-    //             query: { subject: topic },
-    //         });
-    //     }
-    // };
 
 
     return (
         <div>
             <Navbar/>
             <div className="flex flex-col items-center justify-center py-1 bg-white min-h-screen">
-            {/*<Modal isOpen={modalOpen} onClose={() => setModalOpen(false)}>*/}
-            {/*    <h2>Subject Level</h2>*/}
-            {/*    <p>Are you studying for high school or college?</p>*/}
-            {/*</Modal>*/}
                 <QuizzieDiv/>
             <input
                 type="text"
@@ -74,7 +65,7 @@ export default function DashboardPage() {
                             <div className="px-6 py-4">
                                 <button
                                     className="bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded-full"
-                                    // onClick={() => handleQuizStart(topic)}
+                                    onClick={() => setModalOpen(true)}
                                 >
                                     Start Quiz
                                 </button>
@@ -82,6 +73,10 @@ export default function DashboardPage() {
                         </div>
                     ))}
                 </div>
+                {modalOpen && (
+                    <Modal open={modalOpen} handleClose={() => setModalOpen(false)}>
+                    </Modal>
+                )}
         </div>
     </div>
     );

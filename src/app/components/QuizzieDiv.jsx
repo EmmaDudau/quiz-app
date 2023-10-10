@@ -16,7 +16,7 @@ export default function QuizzieDiv() {
     }, []);
 
     return (
-        <div className="flex justify-center w-1/2 mx-auto space-x-4">
+        <div className="flex justify-center w-1/2 mx-auto space-x-4 pt-12">
             {quizzieLetters.map((letter, index) => (
                 <h1
                     key={index}
